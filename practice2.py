@@ -22,7 +22,7 @@ div = driver.find_element_by_id('work_position_click_multiple') # 找到已选�
 spans = div.find_elements_by_css_selector('#work_position_click_multiple_selected > span') # 只有当已选列表里有元素才会有的元素列表
 
 if spans != []:
-    for one in spans:# 遍历整个列表
+    for one in spans: # 遍历整个列表
         one.find_element_by_tag_name('em').click()    # 取消已选中的每一个地区
 else:
     pass
@@ -31,10 +31,10 @@ driver.find_element_by_id('work_position_click_center_right_list_category_000000
 driver.find_element_by_id('work_position_click_bottom_save').click()  # 点击确定
 driver.find_element_by_css_selector('div[class="ush top_wrap"] div ~ button').click()   # 点击搜索
 
-jobs = driver.find_elements_by_css_selector('#resultList > div[class="el"]')
+jobs = driver.find_elements_by_css_selector('#resultList > div[class="el"]') # 第一页的列表
 for job in jobs:
-    spans = job.find_elements_by_tag_name('span')
-    data = [one.text for one in spans]
+    spans = job.find_elements_by_tag_name('span')  # 没个工作的职位名、公司名、工作地点、薪资和发布时间
+    data = [one.text for one in spans]  
     print(' | '.join(data))
 
 
