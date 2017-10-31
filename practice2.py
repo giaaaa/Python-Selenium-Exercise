@@ -33,8 +33,8 @@ driver.find_element_by_css_selector('div[class="ush top_wrap"] div ~ button').cl
 
 jobs = driver.find_elements_by_css_selector('#resultList > div[class="el"]') # 第一页的列表
 for job in jobs:
-    spans = job.find_elements_by_tag_name('span')  # 没个工作的职位名、公司名、工作地点、薪资和发布时间
-    data = [one.text for one in spans]  
+    spans = job.find_elements_by_tag_name('span')  # 每个工作的职位名、公司名、工作地点、薪资和发布时间
+    data = [one.text for one in spans]
     print(' | '.join(data))
 
 
